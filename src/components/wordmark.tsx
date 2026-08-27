@@ -17,7 +17,7 @@ export default function Wordmark({ compact = false }: { compact?: boolean }) {
           </span>
         </span>
         {!compact && (
-          <span className="block font-mono text-[0.55rem] leading-none tracking-[0.24em] text-muted-2">
+          <span className="block font-mono text-[0.55rem] leading-none tracking-[0.24em] text-muted">
             PVT. LTD.
           </span>
         )}

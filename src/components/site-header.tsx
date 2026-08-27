@@ -35,7 +35,13 @@ export default function SiteHeader() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-6 lg:px-10">
+      {!scrolled && !open && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[130px] bg-gradient-to-b from-[rgba(6,8,12,0.75)] to-transparent"
+        />
+      )}
+      <div className="relative mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-6 lg:px-10">
         <Wordmark />
 
         <nav className="hidden items-center gap-9 lg:flex">
