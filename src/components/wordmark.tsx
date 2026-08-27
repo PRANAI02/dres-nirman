@@ -9,15 +9,15 @@ export default function Wordmark({ compact = false }: { compact?: boolean }) {
           <path d="M3 20h18M6 20V9l6-4 6 4v11M10 20v-5h4v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
         </svg>
       </span>
-      <span className="leading-none">
-        <span className="display block text-[1.35rem] tracking-[-0.02em] text-white">
+      <span className="flex flex-col justify-center gap-[3px]">
+        <span className="display flex items-baseline gap-1.5 text-[1.35rem] leading-[1.05] tracking-[-0.02em] text-white">
           DRES
-          <span className="ml-1.5 font-mono text-[0.6rem] font-normal tracking-[0.3em] text-accent-bright align-middle">
+          <span className="font-mono text-[0.6rem] font-normal leading-none tracking-[0.3em] text-accent-bright">
             NIRMAN
           </span>
         </span>
         {!compact && (
-          <span className="mt-1 block font-mono text-[0.55rem] tracking-[0.24em] text-muted-2">
+          <span className="block font-mono text-[0.55rem] leading-none tracking-[0.24em] text-muted-2">
             PVT. LTD.
           </span>
         )}
