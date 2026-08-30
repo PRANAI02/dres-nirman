@@ -8,15 +8,27 @@ import { nav } from "@/lib/content";
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [past, setPast] = useState(false);
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState<string | null>(null);
   const pathname = usePathname();
 
+  // On the home page the header stays out of the way until the visitor has
+  // scrolled past the full-height hero image.
+  const overlayHero = pathname === "/";
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setPast(window.scrollY > window.innerHeight - 90);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -31,11 +43,31 @@ export default function SiteHeader() {
     };
   }, [open]);
 
+  const hidden = overlayHero && !past && !open;
+
   return (
+    <>
+      {/* the header tucks away over the hero, so mobile keeps a way in */}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Open menu"
+        className={`fixed right-6 top-6 z-50 grid h-11 w-11 place-items-center border border-[var(--line-strong)] bg-[rgba(6,8,12,0.5)] backdrop-blur-md transition-opacity duration-500 lg:hidden ${
+          hidden ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <span className="relative block h-3 w-5">
+          <span className="absolute left-0 top-0 h-px w-5 bg-white" />
+          <span className="absolute left-0 top-3 h-px w-5 bg-white" />
+        </span>
+      </button>
+
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter,transform,opacity] duration-500 ${
+        hidden ? "pointer-events-none -translate-y-full opacity-0" : "translate-y-0 opacity-100"
+      } ${
         scrolled || open
-          ? "border-b border-[var(--line)] bg-[rgba(6,8,12,0.82)] backdrop-blur-xl"
+          ? "border-b border-[var(--line)] bg-[rgba(6,8,12,0.86)] backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -45,10 +77,10 @@ export default function SiteHeader() {
           className="pointer-events-none absolute inset-x-0 top-0 h-[130px] bg-gradient-to-b from-[rgba(6,8,12,0.75)] to-transparent"
         />
       )}
-      <div className="relative mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-6 lg:px-10">
+      <div className="relative mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-6 lg:px-10">
         <Wordmark />
 
-        <nav className="hidden items-center gap-8 lg:flex xl:gap-11">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7 2xl:gap-9">
           {nav.map((item) => {
             const active =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -128,7 +160,7 @@ export default function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="label hidden items-center gap-2 border border-[var(--line-strong)] px-5 py-3 text-white transition-colors hover:border-accent-bright hover:bg-[rgba(31,111,224,0.12)] xl:inline-flex"
+            className="label hidden items-center gap-2 whitespace-nowrap border border-[var(--line-strong)] px-4 py-3 text-white transition-colors hover:border-accent-bright hover:bg-[rgba(31,111,224,0.12)] xl:inline-flex"
           >
             start a project
             <span aria-hidden>→</span>
@@ -191,5 +223,6 @@ export default function SiteHeader() {
         </nav>
       </div>
     </header>
+    </>
   );
 }

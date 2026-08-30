@@ -79,13 +79,26 @@ body {
   text-transform: lowercase;
 }
 
-/* wide-tracked lowercase nav treatment */
+/* wide-tracked lowercase nav treatment — tracking opens up as room allows */
 .nav-link {
   font-family: var(--font-jost), "Futura", "Century Gothic", ui-sans-serif, sans-serif;
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 300;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.16em;
   text-transform: lowercase;
+  white-space: nowrap;
+}
+@media (min-width: 1280px) {
+  .nav-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+  }
+}
+@media (min-width: 1536px) {
+  .nav-link {
+    font-size: 0.84rem;
+    letter-spacing: 0.3em;
+  }
 }
 
 .num {
@@ -98,7 +111,28 @@ body {
   font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   line-height: 1.65;
   color: var(--muted);
-  text-wrap: pretty;
+}
+
+/* Body copy is justified throughout. These rules sit outside Tailwind's
+   utility layer, so alignment overrides have to be spelled out here — a bare
+   `text-center` utility would otherwise lose to them. */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+p.display,
+p.label,
+p.num,
+p.text-left {
+  text-align: left;
+  hyphens: none;
+}
+p.text-center {
+  text-align: center;
+}
+p.text-right {
+  text-align: right;
 }
 
 /* ---------- surfaces ---------- */

@@ -17,10 +17,11 @@ has a dedicated page reachable from the header dropdown.
 | Route | Doc section |
 |---|---|
 | `/` | 01 Home — hero + expertise index + CTA. Nothing else. |
-| `/about` | 02 About us, Our Story, Vision, Mission, Values |
+| `/about` | 02 About us, Our Story, Why DRES NIRMAN |
+| `/mission` | Our Vision, Our Mission, Our Values |
 | `/expertise` | 03 Our Expertise — index of the 7 disciplines |
 | `/expertise/[slug]` | one page per discipline (7 static routes) |
-| `/approach` | 05 Our Approach + 06 Why DRES + 07 Technology |
+| `/approach` | 05 Our Approach — the five steps, nothing else |
 | `/projects` | 04 Our Projects — "yet to come" placeholder |
 | `/people` | 08 People — founder, director, team |
 | `/careers` | 09 Careers — "yet to come" placeholder |
@@ -44,13 +45,32 @@ Content lives in `src/lib/content.ts` — edit there, not in the page files.
 - **LinkedIn** — `contact.linkedin` is `#`.
 - **Contact form** — client-side only, does not send. Wire to an email service
   (Resend / Formspree) in `src/components/enquiry-form.tsx`.
-- **Technology & Innovation** — the doc had no copy under section 07; the four
-  capability lines on `/approach` are drafted and need confirming.
+- **Technology & Innovation** — section 07 of the doc was empty and the drafted
+  placeholder copy has been dropped at the client's request. Nothing on the site
+  covers it now; add a page if real copy arrives.
 - **Domain** — `metadataBase` in `src/app/layout.tsx` points at `dresnirman.com`.
+
+## Home page
+Deliberately thin: full-bleed hero carrying the logo (the header hides itself
+over it and slides in once you scroll past — see `overlayHero` in
+`site-header.tsx`), capability marquee, stats strip, positioning statement, CTA.
+No expertise list, no about copy.
+
+## Logo
+`public/logo-full.png` (complete lockup, used on the hero and in the footer) and
+`public/logo-dres.png` (the DRES mark alone, used in the header) are both derived
+from `DRES WEBSITE  2.docx` → `word/media/image1.png`, which is navy-on-white.
+A script keys out the white and remaps the ink to a near-white → accent-blue ramp
+so it reads on the dark ground. The header pairs the mark with a typeset
+"NIRMAN PVT. LTD." because the logo's own version of that line is far too small
+to survive at 38px.
 
 ## Design system
 Tokens in `src/app/globals.css`. Ink `#06080c`, accent `#1f6fe0` / `#5aa2ff`
 (sampled from the logo). Type is **Jost** — light-weight, wide-tracked, lowercase
 for nav and labels (`.display`, `.label`, `.nav-link`) — with Inter for body copy
 and IBM Plex Mono kept only for the small index numerals (`.num`).
+All body paragraphs are justified (`p` rule in `globals.css`); because those
+rules sit outside Tailwind's utility layer, alignment overrides are spelled out
+there as `p.text-center` / `p.text-left` rather than via utility classes.
 Logo assets: `public/logo-full.png` (from the docx), `src/app/icon.png` (favicon).

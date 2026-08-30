@@ -33,7 +33,7 @@ export default function PeoplePage() {
         label="People"
         title="The People Behind DRES NIRMAN"
         lede="A legacy of civil construction and execution, combined with modern engineering education and industry experience."
-        image="/images/steel-joint.jpg"
+        image="/images/safety.jpg"
         alt="Structural steel connection against the sky"
       />
 
@@ -47,18 +47,6 @@ export default function PeoplePage() {
                 <p className="display text-xl text-white">Dhanushh Kumar Reddy Kadiri</p>
                 <p className="label mt-3 text-accent-bright">Founder &amp; Managing Director</p>
               </div>
-              <dl className="mt-8 space-y-4 border-t border-[var(--line)] pt-6 text-[0.8rem]">
-                {[
-                  ["Education", "B.E. Civil Engineering — Manipal Institute of Technology"],
-                  ["", "M.Sc. Sustainable Civil & Structural Engineering — University of Liverpool"],
-                  ["Experience", "L&T · Vijay Nirman Company · K. Sanjeeva Reddy Civil Engineers · RREN Consultants"],
-                ].map(([k, v], i) => (
-                  <div key={i}>
-                    {k && <dt className="label text-muted-2">{k}</dt>}
-                    <dd className="mt-2 leading-relaxed text-steel">{v}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </Reveal>
 
@@ -117,20 +105,6 @@ export default function PeoplePage() {
                   <p className="display text-xl text-white">K. Sanjeeva Reddy</p>
                   <p className="label mt-3 text-accent-bright">Director</p>
                 </div>
-                <dl className="mt-8 space-y-4 border-t border-[var(--line)] pt-6 text-[0.8rem]">
-                  <div>
-                    <dt className="label text-muted-2">Since</dt>
-                    <dd className="mt-2 leading-relaxed text-steel">
-                      1990 — practising civil engineer and contractor
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="label text-muted-2">Sectors</dt>
-                    <dd className="mt-2 leading-relaxed text-steel">
-                      BPCL · HPCL · GAIL associated works · Natural stone · Real estate
-                    </dd>
-                  </div>
-                </dl>
               </div>
             </Reveal>
           </div>

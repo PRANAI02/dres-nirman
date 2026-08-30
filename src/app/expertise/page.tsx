@@ -20,8 +20,8 @@ export default function ExpertisePage() {
         label="our expertise"
         title="Multidisciplinary by design, not by accident."
         lede="Each discipline stands on its own — and every one of them is engineered to work with the others on the same project, the same drawing set and the same site."
-        image="/images/lattice.jpg"
-        alt="Steel lattice structure"
+        image="/images/factory.jpg"
+        alt="Industrial production facility interior"
       />
 
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">

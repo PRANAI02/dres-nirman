@@ -41,8 +41,8 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/civil.jpg",
     alt: "Concrete being placed over reinforcement on a civil works site",
-    hero: "/images/excavator.jpg",
-    heroAlt: "Civil construction works in progress on site",
+    hero: "/images/civil.jpg",
+    heroAlt: "Concrete being placed over reinforcement on a civil works site",
   },
   {
     slug: "peb-and-steel-structures",
@@ -102,8 +102,8 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/plant.jpg",
     alt: "Process plant structures and piping",
-    hero: "/images/factory.jpg",
-    heroAlt: "Industrial production facility interior",
+    hero: "/images/chimneys.jpg",
+    heroAlt: "Industrial plant stacks and process structures",
   },
   {
     slug: "architectural-and-planning-coordination",
@@ -145,8 +145,8 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/survey-drone.jpg",
     alt: "Surveyor operating a mapping drone on site",
-    hero: "/images/drone2.jpg",
-    heroAlt: "Survey drone flying over open terrain",
+    hero: "/images/survey.jpg",
+    heroAlt: "Survey instrument set up on open ground",
   },
   {
     slug: "sustainable-engineering",
@@ -166,13 +166,14 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/carbon-fibre.jpg",
     alt: "Carbon fibre fabric used for structural strengthening",
-    hero: "/images/chimneys.jpg",
-    heroAlt: "Existing industrial structures being assessed for strengthening",
+    hero: "/images/girders.jpg",
+    heroAlt: "An existing steel structure being assessed for strengthening",
   },
 ];
 
 export const nav: NavItem[] = [
   { href: "/about", label: "about" },
+  { href: "/mission", label: "our mission" },
   {
     href: "/expertise",
     label: "expertise",
@@ -242,25 +243,6 @@ export const whyDres = [
   {
     title: "Long-Term Thinking",
     body: "Building relationships and capabilities for sustainable growth.",
-  },
-];
-
-export const technology = [
-  {
-    title: "Structural analysis & design software",
-    body: "Modelling, analysis and code-based design checks.",
-  },
-  {
-    title: "Digital detailing & drawing control",
-    body: "Coordinated drawings, revisions and issue tracking.",
-  },
-  {
-    title: "DGPS & drone-based survey",
-    body: "High-precision positioning, mapping and volumetrics.",
-  },
-  {
-    title: "GIS-based mapping & analysis",
-    body: "Spatial data for planning and infrastructure projects.",
   },
 ];
 

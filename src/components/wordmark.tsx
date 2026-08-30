@@ -1,26 +1,34 @@
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Wordmark({ compact = false }: { compact?: boolean }) {
+/**
+ * The logo's own "NIRMAN PVT. LTD." line is set far too small relative to the
+ * DRES mark to survive a 40px header, so the header pairs the mark itself with
+ * the company name typeset alongside it. The complete logo runs on the home
+ * hero and in the footer.
+ */
+export default function Wordmark() {
   return (
-    <Link href="/" className="group flex items-center gap-3" aria-label="DRES NIRMAN — home">
-      <span className="relative grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-[3px] bg-gradient-to-br from-[#0b63d6] to-[#00306f] shadow-[0_0_0_1px_rgba(255,255,255,0.12)_inset]">
-        <span className="absolute inset-0 opacity-40 [background:linear-gradient(115deg,transparent_35%,rgba(255,255,255,0.55)_50%,transparent_65%)]" />
-        <svg viewBox="0 0 24 24" className="relative h-4 w-4 text-white" fill="none" aria-hidden>
-          <path d="M3 20h18M6 20V9l6-4 6 4v11M10 20v-5h4v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-        </svg>
-      </span>
-      <span className="flex flex-col justify-center gap-[3px]">
-        <span className="display flex items-baseline gap-2 text-[1.4rem] font-normal leading-[1.05] tracking-[0.06em] text-white">
-          DRES
-          <span className="text-[0.62rem] font-light leading-none tracking-[0.34em] text-[#8fc0ff]">
-            NIRMAN
-          </span>
+    <Link
+      href="/"
+      className="group flex shrink-0 items-center gap-3"
+      aria-label="DRES NIRMAN Pvt. Ltd. — home"
+    >
+      <Image
+        src="/logo-dres.png"
+        alt="DRES NIRMAN Pvt. Ltd."
+        width={1192}
+        height={296}
+        priority
+        className="h-[34px] w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-[38px]"
+      />
+      <span className="mt-1 hidden flex-col gap-[3px] border-l border-[var(--line-strong)] pl-3 sm:flex lg:hidden 2xl:flex">
+        <span className="text-[0.62rem] font-light leading-none tracking-[0.32em] text-steel">
+          NIRMAN
         </span>
-        {!compact && (
-          <span className="block text-[0.55rem] font-light leading-none tracking-[0.3em] text-steel">
-            PVT. LTD.
-          </span>
-        )}
+        <span className="text-[0.52rem] font-light leading-none tracking-[0.28em] text-muted-2">
+          PVT. LTD.
+        </span>
       </span>
     </Link>
   );

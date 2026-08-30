@@ -5,7 +5,7 @@ import PageHero from "@/components/page-hero";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import CtaBand from "@/components/cta-band";
-import { capabilities, values } from "@/lib/content";
+import { capabilities, whyDres } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -21,20 +21,41 @@ export default function AboutPage() {
         label="About Us"
         title="Engineering Built on Experience. Driven by What Comes Next."
         lede="A multidisciplinary engineering firm built at the intersection of two worlds — the practical experience of construction and the evolving possibilities of modern engineering."
-        image="/images/roof.jpg"
-        alt="Structural roof framing viewed from below"
+        image="/images/story.jpg"
+        alt="Site engineer on an industrial construction site at dusk"
       />
 
       {/* intro */}
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-          <Reveal>
-            <p className="label text-muted-2">Who We Are</p>
-            <p className="display mt-6 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-tight text-white">
-              Good engineering is not simply about designing something that works
-              today.
-            </p>
-          </Reveal>
+          <div>
+            <Reveal>
+              <p className="label text-muted-2">who we are</p>
+              <p className="display mt-6 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-tight text-white">
+                Good engineering is not simply about designing something that
+                works today.
+              </p>
+            </Reveal>
+            <Reveal delay={140} className="group">
+              <div className="relative mt-12 aspect-[4/5] w-full overflow-hidden">
+                <Image
+                  src="/images/civil.jpg"
+                  alt="Concrete being placed over reinforcement on a civil works site"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="img-cool object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,12,0.7)] to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 border-t border-[var(--line-strong)] bg-[rgba(6,8,12,0.68)] p-6 backdrop-blur-md">
+                  <p className="label text-accent-bright">since 1991</p>
+                  <p className="mt-3 text-left text-sm leading-relaxed text-steel">
+                    A family legacy in civil construction, carried into a new
+                    generation of engineering.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
           <div>
             <Reveal delay={90}>
               <p className="lede">
@@ -134,8 +155,8 @@ export default function AboutPage() {
             <div className="sticky top-28">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/images/story.jpg"
-                  alt="Site engineer on an industrial construction site at dusk"
+                  src="/images/excavator.jpg"
+                  alt="Civil construction works under way on site"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover [filter:grayscale(0.35)]"
@@ -159,58 +180,52 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* vision / mission */}
-      <section className="border-y border-[var(--line)] bg-[var(--ink-2)]">
-        <div className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
-          <div className="grid gap-px bg-[var(--line)] lg:grid-cols-2">
-            <Reveal>
-              <div className="h-full bg-[var(--ink-2)] p-8 lg:p-14">
-                <p className="label text-accent-bright">Our Vision</p>
-                <p className="display mt-7 text-[clamp(1.3rem,2.2vw,1.8rem)] leading-snug text-white">
-                  To establish DRES NIRMAN as a leading multidisciplinary
-                  engineering firm, delivering projects and solutions that stand
-                  the test of time.
-                </p>
-                <p className="mt-6 text-sm leading-relaxed text-muted">
-                  While continuously learning, adapting and evolving with
-                  advancements in engineering and technology. Our long-term
-                  ambition is to build DRES into a Tier-1 engineering organisation
-                  recognised for technical excellence, strength, innovation and
-                  enduring value.
-                </p>
+      {/* why dres nirman */}
+      <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          index="—"
+          label="why dres nirman"
+          title="Engineering judgement, earned on site."
+        />
+        <div className="mt-16 grid gap-x-12 gap-y-px md:grid-cols-2 lg:grid-cols-3">
+          {whyDres.map((w, i) => (
+            <Reveal key={w.title} delay={(i % 3) * 80}>
+              <div className="group border-t border-[var(--line)] py-8">
+                <div className="flex items-start gap-4">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-accent-bright transition-transform duration-500 group-hover:scale-150" />
+                  <div>
+                    <h3 className="display text-lg text-white">{w.title}</h3>
+                    <p className="mt-2 text-[0.85rem] leading-relaxed text-muted">
+                      {w.body}
+                    </p>
+                  </div>
+                </div>
               </div>
             </Reveal>
-            <Reveal delay={100}>
-              <div className="h-full bg-[var(--ink-2)] p-8 lg:p-14">
-                <p className="label text-accent-bright">Our Mission</p>
-                <p className="display mt-7 text-[clamp(1.3rem,2.2vw,1.8rem)] leading-snug text-white">
-                  To deliver engineering solutions that are technically sound,
-                  practical to execute and built for lasting performance.
-                </p>
-                <p className="mt-6 text-sm leading-relaxed text-muted">
-                  By combining experience, innovation, technology and continuous
-                  learning, we aim to create work that reflects our commitment to
-                  strength, precision and sustainability — and that is responsible
-                  towards the future.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="mt-20">
-            <Reveal>
-              <p className="label text-muted-2">Our Values</p>
-            </Reveal>
-            <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
-              {values.map((v, i) => (
-                <Reveal key={v} delay={i * 60}>
-                  <span className="display text-[clamp(1.4rem,3.4vw,2.6rem)] text-white/85 transition-colors hover:text-accent-bright">
-                    {v}
-                  </span>
-                </Reveal>
-              ))}
-            </div>
-          </div>
+      {/* vision & mission live on their own page */}
+      <section className="border-y border-[var(--line)] bg-[var(--ink-2)]">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-28">
+          <Reveal>
+            <Link
+              href="/mission"
+              className="group flex flex-wrap items-center justify-between gap-8 border border-[var(--line)] p-8 transition-colors hover:border-accent-bright lg:p-14"
+            >
+              <div className="max-w-2xl">
+                <span className="label text-accent-bright">our mission</span>
+                <p className="display mt-6 text-[clamp(1.4rem,2.8vw,2.2rem)] leading-snug text-white">
+                  What we are working towards, how we intend to get there, and the
+                  values we hold ourselves to.
+                </p>
+              </div>
+              <span className="label flex items-center gap-3 text-muted transition-transform duration-500 group-hover:translate-x-2">
+                vision, mission &amp; values <span aria-hidden>→</span>
+              </span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 

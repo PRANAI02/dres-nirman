@@ -18,7 +18,7 @@ export default function CareersPage() {
         label="Careers"
         title="Build With Us."
         lede="We are building a multidisciplinary organisation for the next generation of engineering and construction."
-        image="/images/warehouse-modern.jpg"
+        image="/images/rebar.jpg"
         alt="Interior of a modern industrial building"
       />
 

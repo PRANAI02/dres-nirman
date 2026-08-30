@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/page-hero";
 import Reveal from "@/components/reveal";
 import EnquiryForm from "@/components/enquiry-form";
@@ -73,25 +72,6 @@ export default function ContactPage() {
                 <p className="mt-6 font-mono text-[0.6rem] leading-relaxed tracking-[0.12em] text-muted-2">
                   * Email address and LinkedIn URL are placeholders — confirm before launch.
                 </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={170}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-[var(--line)]">
-                <Image
-                  src="/images/survey.jpg"
-                  alt="Survey instrument on site"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 34vw"
-                  className="object-cover [filter:grayscale(0.45)]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,12,0.85)] to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="label text-accent-bright">Kurnool · Andhra Pradesh</p>
-                  <p className="mt-2 text-sm text-steel">
-                    Working across South India and beyond.
-                  </p>
-                </div>
               </div>
             </Reveal>
 

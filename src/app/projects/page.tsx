@@ -41,7 +41,7 @@ export default function ProjectsPage() {
         label="Our Projects"
         title="Yet to come."
         lede="Our project index is being prepared. In the meantime, here are the sectors we are built to deliver in — and the disciplines we bring to each of them."
-        image="/images/hero.jpg"
+        image="/images/warehouse-modern.jpg"
         alt="Steel structure erection at an industrial site"
       />
 
