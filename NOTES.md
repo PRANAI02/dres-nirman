@@ -54,15 +54,18 @@ Content lives in `src/lib/content.ts` — edit there, not in the page files.
 - **Domain** — `metadataBase` in `src/app/layout.tsx` points at `dresnirman.com`.
 
 ## Home page
-Deliberately thin: full-bleed hero carrying the logo (the header hides itself
-over it and slides in once you scroll past — see `overlayHero` in
-`site-header.tsx`), capability marquee, stats strip, positioning statement, CTA.
-No expertise list, no about copy.
+Deliberately thin: full-bleed hero, capability marquee, stats strip, positioning
+statement, CTA. No expertise list, no about copy.
+
+The hero carries no logo image — the mark lives in the header. Its two lines
+("Multidisciplinary Engineering and Industrial Solutions Company" and
+"Engineering a Stronger, Smarter, Sustainable Tomorrow") are set as live Jost
+type so they stay crisp and can be positioned, rather than cropped out of the
+raster logo.
 
 ## Logo
-`public/logo-full.png` (complete lockup, used in the footer), `public/logo-hero.png`
-(the same lockup with the "NIRMAN PVT. LTD." band lifted out, used on the home hero)
-and `public/logo-dres.png` (the DRES mark alone, used in the header) are all derived
+`public/logo-full.png` (complete lockup, used in the footer) and
+`public/logo-dres.png` (the DRES mark alone, used in the header) are both derived
 from `DRES WEBSITE  2.docx` → `word/media/image1.png`, which is navy-on-white.
 A script keys out the white and remaps the ink to a near-white → accent-blue ramp
 so it reads on the dark ground. The header pairs the mark with a typeset

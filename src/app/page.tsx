@@ -21,25 +21,36 @@ export default function Home() {
         {/* edge vignette keeps the photograph visible, the soft centre pool
             gives the logo a dark bed to sit on */}
         <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_42%,rgba(6,8,12,0.1)_0%,rgba(6,8,12,0.42)_55%,rgba(6,8,12,0.82)_84%,var(--ink)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(58%_50%_at_50%_45%,rgba(6,8,12,0.78)_0%,rgba(6,8,12,0.55)_45%,rgba(6,8,12,0.18)_75%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(62%_46%_at_50%_42%,rgba(6,8,12,0.8)_0%,rgba(6,8,12,0.58)_48%,rgba(6,8,12,0.2)_78%,transparent_100%)]" />
         <div className="blueprint absolute inset-0 opacity-50" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--ink)] to-transparent" />
 
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center justify-center px-6 py-28 text-center lg:px-10">
+          {/* The mark itself lives in the header; the hero carries the two lines
+              from the logo, set as live type so they stay crisp and can be
+              positioned properly. */}
           <Reveal>
-            {/* hero variant of the logo — the "NIRMAN PVT. LTD." line is lifted
-                out; the footer still carries the complete lockup */}
-            <Image
-              src="/logo-hero.png"
-              alt="DRES NIRMAN Pvt. Ltd. — multidisciplinary engineering and industrial solutions company"
-              width={1192}
-              height={453}
-              priority
-              className="h-auto w-[min(600px,88vw)] drop-shadow-[0_4px_36px_rgba(0,0,0,0.85)]"
-            />
+            <p className="max-w-3xl text-center text-[clamp(0.6rem,1.05vw,0.78rem)] font-light uppercase leading-relaxed tracking-[0.34em] text-white/85 drop-shadow-[0_1px_12px_rgba(0,0,0,0.9)]">
+              Multidisciplinary Engineering and Industrial Solutions Company
+            </p>
           </Reveal>
 
-          <Reveal delay={200}>
+          <Reveal delay={110}>
+            <div className="mt-8 flex items-center justify-center gap-1.5" aria-hidden>
+              <span className="h-[2px] w-12 bg-white/80" />
+              <span className="h-[2px] w-12 bg-accent-bright" />
+            </div>
+          </Reveal>
+
+          <Reveal delay={190}>
+            <h1 className="mt-8 max-w-5xl text-center font-[family-name:var(--font-jost)] text-[clamp(1.15rem,3.1vw,2.6rem)] font-light uppercase leading-[1.35] tracking-[0.16em] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.85)]">
+              Engineering a Stronger, Smarter,
+              <br className="hidden sm:block" />{" "}
+              Sustainable Tomorrow
+            </h1>
+          </Reveal>
+
+          <Reveal delay={280}>
             <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="/expertise"
