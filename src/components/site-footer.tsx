@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { capabilities, contact, nav } from "@/lib/content";
+import { contact, disciplines, nav } from "@/lib/content";
 
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-[var(--line)] bg-[var(--ink-2)]">
       <div className="blueprint pointer-events-none absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-[1440px] px-6 pb-10 pt-20 lg:px-10 lg:pt-24">
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_1fr_1fr]">
+        <div className="grid gap-14 lg:grid-cols-[1.3fr_0.8fr_1.1fr_1fr]">
           <div>
             <Image
               src="/logo-full.png"
@@ -22,18 +22,18 @@ export default function SiteFooter() {
               technology and practical execution.
             </p>
             <p className="label mt-8 text-accent-bright">
-              Precision · Strength · Innovation
+              precision · strength · innovation
             </p>
           </div>
 
           <div>
-            <h3 className="label text-muted-2">Navigate</h3>
+            <h3 className="label text-muted-2">navigate</h3>
             <ul className="mt-6 space-y-3">
-              {[{ href: "/", label: "Home" }, ...nav].map((item) => (
+              {[{ href: "/", label: "home" }, ...nav].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-steel transition-colors hover:text-accent-bright"
+                    className="nav-link text-steel transition-colors hover:text-accent-bright"
                   >
                     {item.label}
                   </Link>
@@ -43,7 +43,23 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="label text-muted-2">Contact</h3>
+            <h3 className="label text-muted-2">expertise</h3>
+            <ul className="mt-6 space-y-3">
+              {disciplines.map((d) => (
+                <li key={d.slug}>
+                  <Link
+                    href={`/expertise/${d.slug}`}
+                    className="text-[0.82rem] leading-snug text-steel transition-colors hover:text-accent-bright"
+                  >
+                    {d.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="label text-muted-2">contact</h3>
             <ul className="mt-6 space-y-4 text-sm text-steel">
               <li className="font-mono text-[0.7rem] tracking-[0.14em] text-white">
                 {contact.company}
@@ -77,18 +93,10 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap gap-x-6 gap-y-2 border-t border-[var(--line)] pt-8">
-          {capabilities.map((cap) => (
-            <span key={cap} className="font-mono text-[0.65rem] tracking-[0.12em] text-muted-2">
-              {cap}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 text-[0.7rem] text-muted-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-3 text-[0.7rem] text-muted-2 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} DRES NIRMAN Pvt. Ltd. All rights reserved.</p>
-          <p className="font-mono tracking-[0.16em]">
-            ENGINEERING A STRONGER, SMARTER, SUSTAINABLE TOMORROW
+          <p className="label text-muted-2">
+            engineering a stronger, smarter, sustainable tomorrow
           </p>
         </div>
       </div>

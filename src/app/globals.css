@@ -5,11 +5,11 @@
   --ink-2: #0a0e14;
   --panel: #0e131b;
   --panel-2: #131926;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.16);
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.2);
   --fg: #e8ecf2;
-  --muted: #8b97a8;
-  --muted-2: #66707e;
+  --muted: #99a5b6;
+  --muted-2: #7d8899;
   --accent: #1f6fe0;
   --accent-bright: #5aa2ff;
   --accent-deep: #0050b8;
@@ -30,7 +30,7 @@
   --color-accent-deep: var(--accent-deep);
   --color-steel: var(--steel);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-archivo);
+  --font-display: var(--font-jost);
   --font-mono: var(--font-plex-mono);
 }
 
@@ -57,18 +57,41 @@ body {
 
 /* ---------- typography ---------- */
 .display {
-  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  font-family: var(--font-jost), "Futura", "Century Gothic", ui-sans-serif, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.005em;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
+/* heavier optical weight for very large type */
+.display-lg {
+  font-weight: 200;
+  letter-spacing: 0.012em;
+  line-height: 1.02;
+}
+
 .label {
+  font-family: var(--font-jost), "Futura", "Century Gothic", ui-sans-serif, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  text-transform: lowercase;
+}
+
+/* wide-tracked lowercase nav treatment */
+.nav-link {
+  font-family: var(--font-jost), "Futura", "Century Gothic", ui-sans-serif, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: lowercase;
+}
+
+.num {
   font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
 }
 
 .lede {

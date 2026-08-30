@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Archivo, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Jost, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500"],
 });
 
 const inter = Inter({
@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivo.variable} ${inter.variable} ${plexMono.variable} antialiased`}
+        className={`${jost.variable} ${inter.variable} ${plexMono.variable} antialiased`}
       >
         <SiteHeader />
         <main>{children}</main>

@@ -10,9 +10,9 @@ export default function CtaBand() {
         alt="Steel worker welding a beam at height"
         fill
         sizes="100vw"
-        className="object-cover opacity-[0.42] [filter:grayscale(0.35)]"
+        className="object-cover opacity-[0.7] [filter:grayscale(0.2)_brightness(1.05)]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,8,12,0.95)_18%,rgba(6,8,12,0.35)_78%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,8,12,0.94)_14%,rgba(6,8,12,0.55)_58%,rgba(6,8,12,0.18)_92%)]" />
       <div className="relative mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <Reveal>
           <span className="label text-accent-bright">Let&apos;s Build What&apos;s Next</span>

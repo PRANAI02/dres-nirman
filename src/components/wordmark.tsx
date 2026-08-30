@@ -10,14 +10,14 @@ export default function Wordmark({ compact = false }: { compact?: boolean }) {
         </svg>
       </span>
       <span className="flex flex-col justify-center gap-[3px]">
-        <span className="display flex items-baseline gap-1.5 text-[1.35rem] leading-[1.05] tracking-[-0.02em] text-white">
+        <span className="display flex items-baseline gap-2 text-[1.4rem] font-normal leading-[1.05] tracking-[0.06em] text-white">
           DRES
-          <span className="font-mono text-[0.6rem] font-normal leading-none tracking-[0.3em] text-accent-bright">
+          <span className="text-[0.62rem] font-light leading-none tracking-[0.34em] text-[#8fc0ff]">
             NIRMAN
           </span>
         </span>
         {!compact && (
-          <span className="block font-mono text-[0.55rem] leading-none tracking-[0.24em] text-muted">
+          <span className="block text-[0.55rem] font-light leading-none tracking-[0.3em] text-steel">
             PVT. LTD.
           </span>
         )}

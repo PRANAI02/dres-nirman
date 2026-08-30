@@ -24,9 +24,9 @@ export default function PageHero({
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-[0.38] [filter:grayscale(0.6)_contrast(1.05)]"
+        className="object-cover opacity-[0.62] [filter:grayscale(0.35)_contrast(1.02)_brightness(1.08)]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(6,8,12,0.72)] to-[rgba(6,8,12,0.5)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(6,8,12,0.6)] to-[rgba(6,8,12,0.28)]" />
       <div className="blueprint absolute inset-0 opacity-50" />
       <div className="relative mx-auto w-full max-w-[1440px] px-6 pb-16 pt-24 lg:px-10 lg:pb-24">
         <Reveal>

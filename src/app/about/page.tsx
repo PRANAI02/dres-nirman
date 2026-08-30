@@ -134,8 +134,8 @@ export default function AboutPage() {
             <div className="sticky top-28">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/images/girders.jpg"
-                  alt="Steel girders lit at dusk"
+                  src="/images/story.jpg"
+                  alt="Site engineer on an industrial construction site at dusk"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover [filter:grayscale(0.35)]"

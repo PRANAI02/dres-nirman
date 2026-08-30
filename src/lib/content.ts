@@ -1,66 +1,79 @@
-export const nav = [
-  { href: "/about", label: "About" },
-  { href: "/expertise", label: "Expertise" },
-  { href: "/projects", label: "Projects" },
-  { href: "/people", label: "People" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
-];
-
-export const capabilities = [
-  "Civil Engineering & Execution",
-  "PEB & Steel Structures",
-  "Structural Engineering & Design",
-  "Industrial & Infrastructure Projects",
-  "Architectural & Planning Coordination",
-  "Surveying & Geotechnical Coordination",
-  "Retrofitting & Structural Strengthening",
-  "Sustainable Engineering",
-];
+export type NavItem = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+};
 
 export type Discipline = {
-  id: string;
+  slug: string;
   index: string;
   title: string;
+  short: string;
+  /** one-line summary used on cards and the home page */
   blurb: string;
+  /** full section copy for the discipline's own page */
+  overview: string;
   services: string[];
   image: string;
   alt: string;
+  hero: string;
+  heroAlt: string;
 };
 
 export const disciplines: Discipline[] = [
   {
-    id: "civil",
+    slug: "civil-engineering",
     index: "01",
-    title: "Civil Engineering & Execution",
-    blurb:
-      "Ground-up civil delivery backed by decades of site experience — from foundations and RCC frames to industrial civil packages.",
-    services: ["Civil construction", "RCC works", "Industrial civil works"],
-    image: "/images/rebar.jpg",
-    alt: "Reinforcement cages and tower crane on a civil construction site",
+    title: "Civil Engineering",
+    short: "Civil Engineering",
+    blurb: "Civil construction, RCC works and industrial civil packages.",
+    overview:
+      "We specialize in Civil Construction, RCC Works, and Industrial Civil Works, delivering reliable and high-quality construction solutions tailored to the specific requirements of every project. Our expertise covers foundations, reinforced concrete structures, columns, beams, slabs, industrial flooring, equipment foundations, drainage systems, roads, and associated civil infrastructure. With a strong focus on quality, safety, durability, precision, and timely execution, we are committed to delivering robust structures and dependable civil works that meet project specifications and industry standards.",
+    services: [
+      "Civil construction",
+      "RCC works",
+      "Industrial civil works",
+      "Foundations & equipment foundations",
+      "Columns, beams & slabs",
+      "Industrial flooring",
+      "Drainage systems & roads",
+      "Associated civil infrastructure",
+    ],
+    image: "/images/civil.jpg",
+    alt: "Concrete being placed over reinforcement on a civil works site",
+    hero: "/images/excavator.jpg",
+    heroAlt: "Civil construction works in progress on site",
   },
   {
-    id: "peb",
+    slug: "peb-and-steel-structures",
     index: "02",
     title: "PEB & Steel Structures",
-    blurb:
-      "Pre-engineered and conventional steel systems engineered for span, speed and long-term serviceability.",
+    short: "PEB & Steel",
+    blurb: "Pre-engineered buildings, structural steel, sheds and warehouses.",
+    overview:
+      "We specialize in PEB Buildings and Structural Steel Solutions, delivering efficient, durable, and cost-effective structures for industrial and commercial applications. Our expertise includes pre-engineered buildings, structural steel structures, industrial sheds, warehouses, and fabrication & erection coordination. From design coordination and fabrication to site erection, we focus on precision, quality, safety, and seamless project execution to deliver reliable steel structures that meet the functional and operational requirements of each project.",
     services: [
       "PEB buildings",
-      "Structural steel",
+      "Structural steel structures",
       "Industrial sheds",
       "Warehouses",
       "Fabrication & erection coordination",
+      "Design coordination",
+      "Site erection",
     ],
-    image: "/images/warehouse.jpg",
-    alt: "Interior of a clear-span pre-engineered steel building",
+    image: "/images/peb.jpg",
+    alt: "Structural steel portal frames erected against the sky",
+    hero: "/images/hero.jpg",
+    heroAlt: "Pre-engineered steel building under erection",
   },
   {
-    id: "structural",
+    slug: "structural-engineering",
     index: "03",
-    title: "Structural Engineering & Design",
-    blurb:
-      "Analysis and design grounded in code, checked against constructability, and detailed for the people who build it.",
+    title: "Structural Engineering",
+    short: "Structural Engineering",
+    blurb: "Design, detailing and engineering coordination for steel and RCC.",
+    overview:
+      "We provide comprehensive Structural Engineering Solutions focused on safety, strength, efficiency, and long-term performance. Our expertise includes structural design for steel and RCC structures, detailed structural detailing, and engineering coordination. We work closely with project teams to develop practical and reliable structural solutions while ensuring alignment between design, detailing, construction requirements, and project specifications.",
     services: [
       "Structural design",
       "Steel structures",
@@ -68,29 +81,59 @@ export const disciplines: Discipline[] = [
       "Structural detailing",
       "Engineering coordination",
     ],
-    image: "/images/lattice.jpg",
-    alt: "Steel lattice roof structure seen from below",
+    image: "/images/steel-joint.jpg",
+    alt: "Structural steel connection detail",
+    hero: "/images/lattice.jpg",
+    heroAlt: "Steel lattice structure seen from below",
   },
   {
-    id: "industrial",
+    slug: "industrial-projects",
     index: "04",
-    title: "Industrial & Infrastructure Projects",
-    blurb:
-      "Plant-side civil and structural work delivered around live operations, tight tolerances and shutdown windows.",
+    title: "Industrial Projects",
+    short: "Industrial Projects",
+    blurb: "Industrial buildings, plant civil works and maintenance support.",
+    overview:
+      "We provide comprehensive engineering and construction solutions for industrial projects, supporting the development, execution, and maintenance of industrial facilities. Our expertise includes industrial buildings, plant-related civil works, and industrial maintenance and support services. With a strong focus on safety, durability, precision, and operational efficiency, we deliver practical solutions that support the ongoing requirements and long-term performance of industrial facilities.",
     services: [
       "Industrial buildings",
       "Plant-related civil works",
       "Industrial maintenance & support",
+      "Facility development & execution",
     ],
     image: "/images/plant.jpg",
-    alt: "Process plant piping and structures",
+    alt: "Process plant structures and piping",
+    hero: "/images/factory.jpg",
+    heroAlt: "Industrial production facility interior",
   },
   {
-    id: "survey",
+    slug: "architectural-and-planning-coordination",
     index: "05",
+    title: "Architectural & Planning Coordination",
+    short: "Architectural & Planning",
+    blurb: "Design coordination between architecture, structure and site.",
+    overview:
+      "We provide Architectural & Planning Coordination Solutions to ensure seamless integration between architectural concepts, structural systems, engineering requirements, and construction activities. Our approach focuses on functional planning, design coordination, space optimization, drawing coordination, and constructability, helping project teams achieve efficient and practical solutions. By coordinating across disciplines, we support smooth project execution while maintaining design intent, technical accuracy, and project requirements.",
+    services: [
+      "Functional planning",
+      "Design coordination",
+      "Space optimization",
+      "Drawing coordination",
+      "Constructability review",
+      "Cross-discipline integration",
+    ],
+    image: "/images/frame-sky.jpg",
+    alt: "Architectural steel framing against an open sky",
+    hero: "/images/roof.jpg",
+    heroAlt: "Structural roof framing viewed from below",
+  },
+  {
+    slug: "surveying-mapping-and-geospatial",
+    index: "06",
     title: "Surveying, Mapping & Geospatial Coordination",
-    blurb:
-      "High-precision positioning and geospatial data that keeps design, quantities and execution aligned to the ground truth.",
+    short: "Surveying & Geospatial",
+    blurb: "DGPS, drone survey, topographical mapping and GIS analysis.",
+    overview:
+      "We provide comprehensive Surveying, Mapping & Geospatial Solutions to support accurate planning, design, construction, and infrastructure development. Our capabilities include DGPS and high-precision land surveying, drone-based surveys and mapping, topographical and site surveys, GIS-based mapping and analysis, site measurement and setting-out, and survey data processing and documentation. We provide reliable survey support for civil and infrastructure projects, helping project teams make informed decisions through accurate data, precise measurements, and well-organized documentation.",
     services: [
       "DGPS & high-precision land surveying",
       "Drone-based surveys & mapping",
@@ -100,27 +143,52 @@ export const disciplines: Discipline[] = [
       "Survey data processing & documentation",
       "Survey support for civil & infrastructure projects",
     ],
-    image: "/images/survey.jpg",
-    alt: "Survey instrument set up on a site",
+    image: "/images/survey-drone.jpg",
+    alt: "Surveyor operating a mapping drone on site",
+    hero: "/images/drone2.jpg",
+    heroAlt: "Survey drone flying over open terrain",
   },
   {
-    id: "sustainable",
-    index: "06",
-    title: "Sustainable Engineering, Retrofitting & Strengthening",
-    blurb:
-      "Extending the life of what already stands — assessment, strengthening and resource-efficient engineering decisions.",
+    slug: "sustainable-engineering",
+    index: "07",
+    title: "Sustainable Engineering",
+    short: "Sustainable Engineering",
+    blurb: "Assessment, strengthening and retrofitting of existing structures.",
+    overview:
+      "We deliver Sustainable Engineering Solutions focused on improving structural performance, extending asset life, and optimizing the use of resources. Our expertise includes resource-efficient solutions, structural assessment, existing-structure evaluation, sustainable construction practices, structural strengthening, and retrofitting solutions. By combining engineering expertise with practical and sustainable approaches, we help enhance the safety, durability, functionality, and long-term value of existing and new structures.",
     services: [
+      "Resource-efficient solutions",
       "Structural assessment",
       "Existing-structure evaluation",
+      "Sustainable construction practices",
       "Structural strengthening",
       "Retrofitting solutions",
-      "Resource-efficient solutions",
-      "Sustainable construction practices",
     ],
-    image: "/images/frame-sky.jpg",
-    alt: "Steel frame silhouetted against an open sky",
+    image: "/images/carbon-fibre.jpg",
+    alt: "Carbon fibre fabric used for structural strengthening",
+    hero: "/images/chimneys.jpg",
+    heroAlt: "Existing industrial structures being assessed for strengthening",
   },
 ];
+
+export const nav: NavItem[] = [
+  { href: "/about", label: "about" },
+  {
+    href: "/expertise",
+    label: "expertise",
+    children: disciplines.map((d) => ({
+      href: `/expertise/${d.slug}`,
+      label: d.title,
+    })),
+  },
+  { href: "/approach", label: "approach" },
+  { href: "/projects", label: "projects" },
+  { href: "/people", label: "people" },
+  { href: "/careers", label: "careers" },
+  { href: "/contact", label: "contact" },
+];
+
+export const capabilities = disciplines.map((d) => d.title);
 
 export const approach = [
   {
@@ -174,6 +242,25 @@ export const whyDres = [
   {
     title: "Long-Term Thinking",
     body: "Building relationships and capabilities for sustainable growth.",
+  },
+];
+
+export const technology = [
+  {
+    title: "Structural analysis & design software",
+    body: "Modelling, analysis and code-based design checks.",
+  },
+  {
+    title: "Digital detailing & drawing control",
+    body: "Coordinated drawings, revisions and issue tracking.",
+  },
+  {
+    title: "DGPS & drone-based survey",
+    body: "High-precision positioning, mapping and volumetrics.",
+  },
+  {
+    title: "GIS-based mapping & analysis",
+    body: "Spatial data for planning and infrastructure projects.",
   },
 ];
 
