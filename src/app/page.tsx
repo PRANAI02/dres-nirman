@@ -27,11 +27,13 @@ export default function Home() {
 
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center justify-center px-6 py-28 text-center lg:px-10">
           <Reveal>
+            {/* hero variant of the logo — the "NIRMAN PVT. LTD." line is lifted
+                out; the footer still carries the complete lockup */}
             <Image
-              src="/logo-full.png"
+              src="/logo-hero.png"
               alt="DRES NIRMAN Pvt. Ltd. — multidisciplinary engineering and industrial solutions company"
               width={1192}
-              height={521}
+              height={453}
               priority
               className="h-auto w-[min(600px,88vw)] drop-shadow-[0_4px_36px_rgba(0,0,0,0.85)]"
             />

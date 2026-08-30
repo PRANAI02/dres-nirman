@@ -60,8 +60,9 @@ over it and slides in once you scroll past — see `overlayHero` in
 No expertise list, no about copy.
 
 ## Logo
-`public/logo-full.png` (complete lockup, used on the hero and in the footer) and
-`public/logo-dres.png` (the DRES mark alone, used in the header) are both derived
+`public/logo-full.png` (complete lockup, used in the footer), `public/logo-hero.png`
+(the same lockup with the "NIRMAN PVT. LTD." band lifted out, used on the home hero)
+and `public/logo-dres.png` (the DRES mark alone, used in the header) are all derived
 from `DRES WEBSITE  2.docx` → `word/media/image1.png`, which is navy-on-white.
 A script keys out the white and remaps the ink to a near-white → accent-blue ramp
 so it reads on the dark ground. The header pairs the mark with a typeset
