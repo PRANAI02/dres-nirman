@@ -20,12 +20,12 @@ export default function Home() {
         />
         {/* edge vignette keeps the photograph visible, the soft centre pool
             gives the logo a dark bed to sit on */}
-        <div className="absolute inset-0 bg-[radial-gradient(120%_95%_at_62%_28%,rgba(6,8,12,0.08)_0%,rgba(6,8,12,0.4)_52%,rgba(6,8,12,0.8)_84%,var(--ink)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(70%_58%_at_22%_78%,rgba(6,8,12,0.86)_0%,rgba(6,8,12,0.62)_42%,rgba(6,8,12,0.2)_74%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_42%,rgba(6,8,12,0.1)_0%,rgba(6,8,12,0.42)_55%,rgba(6,8,12,0.82)_84%,var(--ink)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(58%_50%_at_50%_45%,rgba(6,8,12,0.78)_0%,rgba(6,8,12,0.55)_45%,rgba(6,8,12,0.18)_75%,transparent_100%)]" />
         <div className="blueprint absolute inset-0 opacity-50" />
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[var(--ink)] via-[rgba(6,8,12,0.45)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--ink)] to-transparent" />
 
-        <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-start justify-end px-6 pb-14 pt-32 lg:px-10 lg:pb-20">
+        <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center justify-center px-6 py-28 text-center lg:px-10">
           <Reveal>
             <Image
               src="/logo-full.png"
@@ -33,12 +33,12 @@ export default function Home() {
               width={1192}
               height={521}
               priority
-              className="h-auto w-[min(540px,86vw)] drop-shadow-[0_4px_36px_rgba(0,0,0,0.9)]"
+              className="h-auto w-[min(600px,88vw)] drop-shadow-[0_4px_36px_rgba(0,0,0,0.85)]"
             />
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="/expertise"
                 className="label inline-flex items-center justify-center gap-3 bg-white px-8 py-4 text-[#06080c] transition-colors hover:bg-accent-bright hover:text-white"

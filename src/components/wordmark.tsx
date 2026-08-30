@@ -20,7 +20,7 @@ export default function Wordmark() {
         width={1192}
         height={296}
         priority
-        className="h-[34px] w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-[38px]"
+        className="h-[34px] w-auto lg:h-[38px]"
       />
       <span className="mt-1 hidden flex-col gap-[3px] border-l border-[var(--line-strong)] pl-3 sm:flex lg:hidden 2xl:flex">
         <span className="text-[0.62rem] font-light leading-none tracking-[0.32em] text-steel">

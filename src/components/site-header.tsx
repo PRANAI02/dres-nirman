@@ -93,38 +93,36 @@ export default function SiteHeader() {
                 >
                   <Link
                     href={item.href}
-                    className={`nav-link relative flex items-center gap-2 py-6 transition-colors ${
+                    className={`nav-link relative flex items-center gap-2 py-6 ${
                       active ? "text-white" : "text-muted hover:text-white"
                     }`}
                   >
                     {item.label}
                     <span
                       aria-hidden
-                      className={`-ml-1 text-[0.6rem] transition-transform duration-300 ${
+                      className={`-ml-1 text-[0.6rem] ${
                         subOpen === item.href ? "rotate-180" : ""
                       }`}
                     >
                       ▾
                     </span>
                     <span
-                      className={`absolute bottom-4 left-0 h-px bg-accent-bright transition-all duration-500 ${
+                      className={`absolute bottom-4 left-0 h-px bg-accent-bright ${
                         active ? "w-[calc(100%-1rem)]" : "w-0"
                       }`}
                     />
                   </Link>
 
                   <div
-                    className={`absolute left-1/2 top-full w-[320px] -translate-x-1/2 border border-[var(--line)] bg-[rgba(8,11,16,0.97)] backdrop-blur-xl transition-all duration-300 ${
-                      subOpen === item.href
-                        ? "pointer-events-auto translate-y-0 opacity-100"
-                        : "pointer-events-none -translate-y-2 opacity-0"
+                    className={`absolute left-1/2 top-full w-[320px] -translate-x-1/2 border border-[var(--line)] bg-[rgba(8,11,16,0.97)] backdrop-blur-xl ${
+                      subOpen === item.href ? "" : "hidden"
                     }`}
                   >
                     {item.children.map((c) => (
                       <Link
                         key={c.href}
                         href={c.href}
-                        className={`block border-b border-[var(--line)] px-6 py-3.5 text-[0.82rem] leading-snug transition-colors last:border-b-0 hover:bg-[rgba(31,111,224,0.12)] hover:text-white ${
+                        className={`block border-b border-[var(--line)] px-6 py-3.5 text-[0.82rem] leading-snug last:border-b-0 hover:bg-[rgba(31,111,224,0.12)] hover:text-white ${
                           pathname === c.href ? "text-accent-bright" : "text-steel"
                         }`}
                       >
@@ -140,13 +138,13 @@ export default function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nav-link relative py-6 transition-colors ${
+                className={`nav-link relative py-6 ${
                   active ? "text-white" : "text-muted hover:text-white"
                 }`}
               >
                 {item.label}
                 <span
-                  className={`absolute bottom-4 left-0 h-px bg-accent-bright transition-all duration-500 ${
+                  className={`absolute bottom-4 left-0 h-px bg-accent-bright ${
                     active ? "w-[calc(100%-0.3em)]" : "w-0"
                   }`}
                 />
@@ -158,7 +156,7 @@ export default function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="label hidden items-center gap-2 whitespace-nowrap border border-[var(--line-strong)] px-4 py-3 text-white transition-colors hover:border-accent-bright hover:bg-[rgba(31,111,224,0.12)] xl:inline-flex"
+            className="label hidden items-center gap-2 whitespace-nowrap border border-[var(--line-strong)] px-4 py-3 text-white hover:border-accent-bright hover:bg-[rgba(31,111,224,0.12)] xl:inline-flex"
           >
             start a project
             <span aria-hidden>→</span>
@@ -189,8 +187,8 @@ export default function SiteHeader() {
 
       {/* mobile */}
       <div
-        className={`overflow-y-auto border-t border-[var(--line)] bg-[rgba(6,8,12,0.98)] transition-[max-height] duration-500 lg:hidden ${
-          open ? "max-h-[80svh]" : "max-h-0 border-t-transparent"
+        className={`overflow-y-auto border-t border-[var(--line)] bg-[rgba(6,8,12,0.98)] lg:hidden ${
+          open ? "max-h-[80svh]" : "hidden"
         }`}
       >
         <nav className="flex flex-col px-6 py-4">
