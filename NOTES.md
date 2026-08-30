@@ -40,6 +40,9 @@ Content lives in `src/lib/content.ts` — edit there, not in the page files.
   `civil.jpg`, `peb.jpg`, `survey-drone.jpg`, `carbon-fibre.jpg`, `story.jpg` and
   `safety.jpg` came from `DRES WEBSITE  2.docx` (the doc's infographic-style
   images were deliberately left out — they carry baked-in text and a foreign logo).
+  Every image must depict work DRES actually does: `factory.jpg`, `automation.jpg`
+  (robotic production lines), `drone.jpg` and `drone2.jpg` (stock drone shots) were
+  removed on that basis. Each page hero is chosen to match that page's heading.
 - **Leadership portraits** — currently monogram tiles (`DK`, `SR`) in `src/app/people/page.tsx`.
 - **Email** — `info@dresnirman.com` invented from the doc's `info@`. Set in `src/lib/content.ts`.
 - **LinkedIn** — `contact.linkedin` is `#`.

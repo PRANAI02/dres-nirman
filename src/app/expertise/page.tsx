@@ -16,12 +16,11 @@ export default function ExpertisePage() {
   return (
     <>
       <PageHero
-        index="03"
         label="our expertise"
         title="Multidisciplinary by design, not by accident."
         lede="Each discipline stands on its own — and every one of them is engineered to work with the others on the same project, the same drawing set and the same site."
-        image="/images/factory.jpg"
-        alt="Industrial production facility interior"
+        image="/images/girders.jpg"
+        alt="Structural steel being erected on site"
       />
 
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
@@ -53,9 +52,6 @@ export default function ExpertisePage() {
                     className="img-cool object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,12,0.85)] via-[rgba(6,8,12,0.2)] to-transparent" />
-                  <span className="num absolute left-6 top-5 text-white/60">
-                    {d.index}
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between p-7 lg:p-8">

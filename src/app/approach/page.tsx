@@ -14,7 +14,6 @@ export default function ApproachPage() {
   return (
     <>
       <PageHero
-        index="05"
         label="our approach"
         title="Understand → Engineer → Plan → Execute → Deliver"
         lede="A single sequence that carries a project from the first site walk to handover — with the same team accountable at every step."

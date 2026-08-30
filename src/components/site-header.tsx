@@ -8,27 +8,15 @@ import { nav } from "@/lib/content";
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
-  const [past, setPast] = useState(false);
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState<string | null>(null);
   const pathname = usePathname();
 
-  // On the home page the header stays out of the way until the visitor has
-  // scrolled past the full-height hero image.
-  const overlayHero = pathname === "/";
-
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      setPast(window.scrollY > window.innerHeight - 90);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -43,27 +31,10 @@ export default function SiteHeader() {
     };
   }, [open]);
 
-  const hidden = overlayHero && !past && !open;
-
   return (
     <>
-      {/* the header tucks away over the hero, so mobile keeps a way in */}
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-label="Open menu"
-        className={`fixed right-6 top-6 z-50 grid h-11 w-11 place-items-center border border-[var(--line-strong)] bg-[rgba(6,8,12,0.5)] backdrop-blur-md lg:hidden ${
-          hidden ? "" : "hidden"
-        }`}
-      >
-        <span className="relative block h-3 w-5">
-          <span className="absolute left-0 top-0 h-px w-5 bg-white" />
-          <span className="absolute left-0 top-3 h-px w-5 bg-white" />
-        </span>
-      </button>
-
     <header
-      className={`fixed inset-x-0 top-0 z-50 ${hidden ? "hidden" : ""} ${
+      className={`fixed inset-x-0 top-0 z-50 ${
         scrolled || open
           ? "border-b border-[var(--line)] bg-[rgba(6,8,12,0.86)] backdrop-blur-xl"
           : "border-b border-transparent"

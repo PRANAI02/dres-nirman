@@ -2,14 +2,12 @@ import Image from "next/image";
 import Reveal from "./reveal";
 
 export default function PageHero({
-  index,
   label,
   title,
   lede,
   image,
   alt,
 }: {
-  index: string;
   label: string;
   title: string;
   lede?: string;
@@ -31,7 +29,6 @@ export default function PageHero({
       <div className="relative mx-auto w-full max-w-[1440px] px-6 pb-16 pt-24 lg:px-10 lg:pb-24">
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="label text-accent-bright">{index}</span>
             <span className="h-px w-10 bg-[var(--line-strong)]" />
             <span className="label text-muted">{label}</span>
           </div>

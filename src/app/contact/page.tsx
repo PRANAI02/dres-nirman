@@ -14,7 +14,6 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        index="10"
         label="Contact"
         title="Let's Build What's Next."
         lede="Have a project, requirement or collaboration opportunity? We'd like to hear from you."

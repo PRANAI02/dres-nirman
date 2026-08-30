@@ -41,7 +41,6 @@ export default async function DisciplinePage({
   return (
     <>
       <PageHero
-        index={d.index}
         label="our expertise"
         title={d.title}
         image={d.hero}
@@ -172,9 +171,7 @@ export default async function DisciplinePage({
                 href={`/expertise/${o.slug}`}
                 className="group flex items-center gap-6 border-b border-[var(--line)] py-5 transition-colors hover:bg-[rgba(255,255,255,0.02)]"
               >
-                <span className="num w-10 shrink-0 text-muted-2 transition-colors group-hover:text-accent-bright">
-                  {o.index}
-                </span>
+                <span className="h-1 w-1 shrink-0 rotate-45 bg-[var(--line-strong)] transition-colors group-hover:bg-accent-bright" />
                 <span className="display flex-1 text-[1.05rem] text-steel transition-colors group-hover:text-white">
                   {o.title}
                 </span>

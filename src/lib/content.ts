@@ -63,8 +63,8 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/peb.jpg",
     alt: "Structural steel portal frames erected against the sky",
-    hero: "/images/hero.jpg",
-    heroAlt: "Pre-engineered steel building under erection",
+    hero: "/images/warehouse.jpg",
+    heroAlt: "Interior of a clear-span pre-engineered steel building",
   },
   {
     slug: "structural-engineering",
@@ -166,8 +166,8 @@ export const disciplines: Discipline[] = [
     ],
     image: "/images/carbon-fibre.jpg",
     alt: "Carbon fibre fabric used for structural strengthening",
-    hero: "/images/girders.jpg",
-    heroAlt: "An existing steel structure being assessed for strengthening",
+    hero: "/images/frame-sky.jpg",
+    heroAlt: "An existing structure being assessed for strengthening",
   },
 ];
 

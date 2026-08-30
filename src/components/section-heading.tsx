@@ -1,13 +1,11 @@
 import Reveal from "./reveal";
 
 export default function SectionHeading({
-  index,
   label,
   title,
   lede,
   align = "left",
 }: {
-  index?: string;
   label: string;
   title: string;
   lede?: string;
@@ -21,7 +19,6 @@ export default function SectionHeading({
             align === "center" ? "justify-center" : ""
           }`}
         >
-          {index && <span className="label text-accent-bright">{index}</span>}
           <span className="h-px w-8 bg-[var(--line-strong)]" />
           <span className="label text-muted-2">{label}</span>
         </div>

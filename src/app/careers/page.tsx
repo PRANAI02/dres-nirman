@@ -14,7 +14,6 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
-        index="09"
         label="Careers"
         title="Build With Us."
         lede="We are building a multidisciplinary organisation for the next generation of engineering and construction."

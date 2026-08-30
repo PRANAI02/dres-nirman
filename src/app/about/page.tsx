@@ -17,7 +17,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        index="02"
         label="About Us"
         title="Engineering Built on Experience. Driven by What Comes Next."
         lede="A multidisciplinary engineering firm built at the intersection of two worlds — the practical experience of construction and the evolving possibilities of modern engineering."
@@ -27,8 +26,8 @@ export default function AboutPage() {
 
       {/* intro */}
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-          <div>
+        <div className="grid items-stretch gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+          <div className="flex flex-col">
             <Reveal>
               <p className="label text-muted-2">who we are</p>
               <p className="display mt-6 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-tight text-white">
@@ -36,11 +35,11 @@ export default function AboutPage() {
                 works today.
               </p>
             </Reveal>
-            <Reveal delay={140} className="group">
-              <div className="relative mt-12 aspect-[4/5] w-full overflow-hidden">
+            <Reveal delay={140} className="group mt-12 flex-1">
+              <div className="relative h-full min-h-[360px] w-full overflow-hidden">
                 <Image
-                  src="/images/civil.jpg"
-                  alt="Concrete being placed over reinforcement on a civil works site"
+                  src="/images/rebar.jpg"
+                  alt="Reinforcement and structural framework on a construction site"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="img-cool object-cover"
@@ -117,7 +116,6 @@ export default function AboutPage() {
       {/* our story */}
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <SectionHeading
-          index="—"
           label="Our Story"
           title="From construction experience to a new generation of engineering."
         />
@@ -183,7 +181,6 @@ export default function AboutPage() {
       {/* why dres nirman */}
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <SectionHeading
-          index="—"
           label="why dres nirman"
           title="Engineering judgement, earned on site."
         />

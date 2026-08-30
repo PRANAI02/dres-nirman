@@ -37,7 +37,6 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
-        index="04"
         label="Our Projects"
         title="Yet to come."
         lede="Our project index is being prepared. In the meantime, here are the sectors we are built to deliver in — and the disciplines we bring to each of them."

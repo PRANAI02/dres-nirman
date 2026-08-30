@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/page-hero";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
@@ -29,7 +28,6 @@ export default function PeoplePage() {
   return (
     <>
       <PageHero
-        index="08"
         label="People"
         title="The People Behind DRES NIRMAN"
         lede="A legacy of civil construction and execution, combined with modern engineering education and industry experience."
@@ -114,7 +112,6 @@ export default function PeoplePage() {
       {/* Team */}
       <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <SectionHeading
-          index="—"
           label="Team"
           title="The people who carry the work to site."
         />
@@ -138,18 +135,6 @@ export default function PeoplePage() {
           ))}
         </div>
 
-        <Reveal delay={200}>
-          <div className="relative mt-20 aspect-[21/9] w-full overflow-hidden">
-            <Image
-              src="/images/factory.jpg"
-              alt="Industrial facility interior"
-              fill
-              sizes="100vw"
-              className="object-cover opacity-45 [filter:grayscale(0.6)]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,12,0.9)] to-transparent" />
-          </div>
-        </Reveal>
       </section>
 
       <CtaBand />
