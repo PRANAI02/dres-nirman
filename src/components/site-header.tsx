@@ -52,8 +52,8 @@ export default function SiteHeader() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
-        className={`fixed right-6 top-6 z-50 grid h-11 w-11 place-items-center border border-[var(--line-strong)] bg-[rgba(6,8,12,0.5)] backdrop-blur-md transition-opacity duration-500 lg:hidden ${
-          hidden ? "opacity-100" : "pointer-events-none opacity-0"
+        className={`fixed right-6 top-6 z-50 grid h-11 w-11 place-items-center border border-[var(--line-strong)] bg-[rgba(6,8,12,0.5)] backdrop-blur-md lg:hidden ${
+          hidden ? "" : "hidden"
         }`}
       >
         <span className="relative block h-3 w-5">
@@ -63,9 +63,7 @@ export default function SiteHeader() {
       </button>
 
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter,transform,opacity] duration-500 ${
-        hidden ? "pointer-events-none -translate-y-full opacity-0" : "translate-y-0 opacity-100"
-      } ${
+      className={`fixed inset-x-0 top-0 z-50 ${hidden ? "hidden" : ""} ${
         scrolled || open
           ? "border-b border-[var(--line)] bg-[rgba(6,8,12,0.86)] backdrop-blur-xl"
           : "border-b border-transparent"
