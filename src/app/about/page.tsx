@@ -18,8 +18,7 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About Us"
-        title="Engineering Built on Experience. Driven by What Comes Next."
-        lede="A multidisciplinary engineering firm built at the intersection of two worlds — the practical experience of construction and the evolving possibilities of modern engineering."
+        lede="A multidisciplinary engineering firm built at the intersection of two worlds: the practical experience of construction and the evolving possibilities of modern engineering."
         image="/images/story.jpg"
         alt="Site engineer on an industrial construction site at dusk"
       />
@@ -30,12 +29,8 @@ export default function AboutPage() {
           <div className="flex flex-col">
             <Reveal>
               <p className="label text-muted-2">who we are</p>
-              <p className="display mt-6 text-[clamp(1.4rem,2.6vw,2.1rem)] leading-tight text-white">
-                Good engineering is not simply about designing something that
-                works today.
-              </p>
             </Reveal>
-            <Reveal delay={140} className="group mt-12 flex-1">
+            <Reveal delay={140} className="group mt-10 flex-1">
               <div className="relative h-full min-h-[360px] w-full overflow-hidden">
                 <Image
                   src="/images/rebar.jpg"
@@ -66,17 +61,6 @@ export default function AboutPage() {
                 projects, architectural and planning coordination, surveying and
                 geotechnical coordination, retrofitting and structural
                 strengthening, and sustainable engineering.
-              </p>
-            </Reveal>
-            <Reveal delay={150}>
-              <p className="lede mt-6">
-                It is about creating solutions that are technically sound,
-                practical to execute, durable in performance and responsible
-                towards the future. DRES NIRMAN is being built with a long-term
-                vision: to grow from a strong foundation of construction
-                experience into a leading multidisciplinary engineering
-                organisation, continuously expanding its knowledge, capabilities
-                and technological depth.
               </p>
             </Reveal>
             <Reveal delay={210}>
@@ -124,9 +108,9 @@ export default function AboutPage() {
           <div className="space-y-6">
             {[
               "Every organisation begins with a reason to exist. For DRES NIRMAN, that reason comes from a simple observation: construction is evolving, and engineering must evolve with it.",
-              "Growing up around the construction industry provided an early understanding of the realities behind every project — the people, materials, drawings, decisions, site conditions and countless small details that ultimately determine whether a structure succeeds. That practical foundation led to a deeper interest in engineering and structural design.",
+              "Growing up around the construction industry provided an early understanding of the realities behind every project: the people, materials, drawings, decisions, site conditions and countless small details that ultimately determine whether a structure succeeds. That practical foundation led to a deeper interest in engineering and structural design.",
               "The journey then moved from construction exposure into formal engineering education and professional experience, with a focus on understanding structures not only from the perspective of execution, but also through analysis, design, technology and engineering principles.",
-              "DRES NIRMAN is being developed as a multidisciplinary engineering firm capable of bringing different areas of expertise together — from civil and structural engineering to steel and PEB structures, industrial projects, architectural coordination, surveying, geotechnical coordination, strengthening and sustainable engineering. We believe the best engineering solutions come from understanding the whole project, while respecting the importance of every individual discipline involved.",
+              "DRES NIRMAN is being developed as a multidisciplinary engineering firm capable of bringing different areas of expertise together, from civil and structural engineering to steel and PEB structures, industrial projects, architectural coordination, surveying, geotechnical coordination, strengthening and sustainable engineering. We believe the best engineering solutions come from understanding the whole project, while respecting the importance of every individual discipline involved.",
             ].map((p, i) => (
               <Reveal key={i} delay={i * 70}>
                 <p className="lede">{p}</p>

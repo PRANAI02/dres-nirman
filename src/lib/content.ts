@@ -258,16 +258,14 @@ export const values = [
 export const team = [
   { name: "Vamshi Krishna Chowdary", role: "Business Associate" },
   { name: "A. Narasimha Reddy", role: "Senior Manager" },
-  { name: "A. Prasad", role: "Manager & Planning Engineer" },
   { name: "P. Vinod Kumar Reddy", role: "Supervisor" },
   { name: "J. Nikhil", role: "Site Engineer" },
-  { name: "N. Rama Krishna Reddy", role: "Supervisor" },
 ];
 
 export const contact = {
   company: "DRES NIRMAN PVT. LTD.",
   address:
-    "Registered Office — H.No. 4/33/6B, Venkata Ramana Colony, Kurnool, Andhra Pradesh",
+    "Registered Office: Flat No. 101, Vijayalakshmi Fortune, Venkata Ramana Colony, Kurnool, Andhra Pradesh",
   email: "info@dresnirman.com",
   phone: "+91 99088 68456",
   phoneHref: "+919908868456",

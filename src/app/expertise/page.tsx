@@ -16,9 +16,7 @@ export default function ExpertisePage() {
   return (
     <>
       <PageHero
-        label="our expertise"
-        title="Multidisciplinary by design, not by accident."
-        lede="Each discipline stands on its own — and every one of them is engineered to work with the others on the same project, the same drawing set and the same site."
+        label="Our Expertise"
         image="/images/girders.jpg"
         alt="Structural steel being erected on site"
       />

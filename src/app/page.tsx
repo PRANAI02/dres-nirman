@@ -106,23 +106,21 @@ export default function Home() {
       </section>
 
       {/* ---------------- POSITIONING ---------------- */}
-      <section className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="mx-auto max-w-3xl">
+      {/* The tagline stands alone. It gets its own band — hairlines top and
+          bottom, the blueprint ground — so a single centred line reads as a
+          deliberate statement rather than empty space. */}
+      <section className="relative overflow-hidden border-b border-[var(--line)] bg-[var(--ink-2)]">
+        <div className="blueprint pointer-events-none absolute inset-0 opacity-50" />
+        <div className="relative mx-auto flex max-w-[1440px] flex-col items-center px-6 py-24 lg:px-10 lg:py-28">
           <Reveal>
-            <span className="label text-accent-bright">
-              engineering a stronger, smarter, sustainable tomorrow
-            </span>
+            <div className="flex items-center justify-center gap-1.5" aria-hidden>
+              <span className="h-[2px] w-12 bg-white/45" />
+              <span className="h-[2px] w-12 bg-accent-bright" />
+            </div>
           </Reveal>
           <Reveal delay={90}>
-            <h1 className="display mt-8 text-[clamp(1.9rem,4.2vw,3.2rem)] text-white">
-              Where Industrial Strength Meets Modern Engineering.
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="lede mt-8">
-              A multidisciplinary engineering and industrial solutions company
-              combining construction experience, engineering expertise, modern
-              technology and practical execution.
+            <p className="mt-10 max-w-4xl text-center font-[family-name:var(--font-jost)] text-[clamp(1.05rem,2.5vw,1.95rem)] font-light uppercase leading-[1.45] tracking-[0.2em] text-white [hyphens:none]">
+              Engineering a Stronger, Smarter, Sustainable Tomorrow
             </p>
           </Reveal>
         </div>

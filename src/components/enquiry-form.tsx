@@ -116,8 +116,8 @@ export default function EnquiryForm() {
           }`}
         >
           {sent
-            ? "DEMO FORM — NOT YET CONNECTED TO AN INBOX"
-            : "PLACEHOLDER FORM — WIRE TO EMAIL BEFORE LAUNCH"}
+            ? "DEMO FORM: NOT YET CONNECTED TO AN INBOX"
+            : "PLACEHOLDER FORM: WIRE TO EMAIL BEFORE LAUNCH"}
         </p>
       </div>
     </form>

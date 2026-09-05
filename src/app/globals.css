@@ -113,13 +113,14 @@ body {
   color: var(--muted);
 }
 
-/* Body copy is justified throughout. These rules sit outside Tailwind's
-   utility layer, so alignment overrides have to be spelled out here — a bare
-   `text-center` utility would otherwise lose to them. */
+/* Body copy is justified, with hyphenation off so no word is ever broken across
+   a line with a dash. These rules sit outside Tailwind's utility layer, so
+   alignment overrides have to be spelled out here: a bare `text-center` utility
+   would otherwise lose to them. */
 p {
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: none;
 }
 p.display,
 p.label,

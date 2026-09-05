@@ -15,10 +15,10 @@ export default function Wordmark() {
       aria-label="DRES NIRMAN Pvt. Ltd. — home"
     >
       <Image
-        src="/logo-dres.png"
+        src="/logo-dres-v2.png"
         alt="DRES NIRMAN Pvt. Ltd."
-        width={1192}
-        height={296}
+        width={1334}
+        height={440}
         priority
         className="h-[34px] w-auto lg:h-[38px]"
       />

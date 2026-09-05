@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Reveal from "./reveal";
 
+/**
+ * `title` is optional. Pages that carry no headline (About, Expertise) promote
+ * the section label into the h1 slot so the hero still reads — and still marks
+ * up — as the page heading.
+ */
 export default function PageHero({
   label,
   title,
@@ -9,7 +14,7 @@ export default function PageHero({
   alt,
 }: {
   label: string;
-  title: string;
+  title?: string;
   lede?: string;
   image: string;
   alt: string;
@@ -27,17 +32,30 @@ export default function PageHero({
       <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(6,8,12,0.6)] to-[rgba(6,8,12,0.28)]" />
       <div className="blueprint absolute inset-0 opacity-50" />
       <div className="relative mx-auto w-full max-w-[1440px] px-6 pb-16 pt-24 lg:px-10 lg:pb-24">
-        <Reveal>
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-[var(--line-strong)]" />
-            <span className="label text-muted">{label}</span>
-          </div>
-        </Reveal>
-        <Reveal delay={90}>
-          <h1 className="display mt-7 max-w-4xl text-[clamp(2.4rem,6vw,4.8rem)] text-white">
-            {title}
-          </h1>
-        </Reveal>
+        {title ? (
+          <>
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-[var(--line-strong)]" />
+                <span className="label text-muted">{label}</span>
+              </div>
+            </Reveal>
+            <Reveal delay={90}>
+              <h1 className="display mt-7 max-w-4xl text-[clamp(2.4rem,6vw,4.8rem)] text-white">
+                {title}
+              </h1>
+            </Reveal>
+          </>
+        ) : (
+          <Reveal>
+            <div className="flex items-center gap-4">
+              <span className="h-px w-10 bg-[var(--line-strong)]" />
+              <h1 className="display text-[clamp(1.9rem,4.4vw,3.4rem)] leading-none text-white">
+                {label}
+              </h1>
+            </div>
+          </Reveal>
+        )}
         {lede && (
           <Reveal delay={160}>
             <p className="lede mt-7 max-w-2xl">{lede}</p>

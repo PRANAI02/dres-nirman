@@ -10,14 +10,14 @@ export default function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-[1.3fr_0.8fr_1.1fr_1fr]">
           <div>
             <Image
-              src="/logo-full.png"
+              src="/logo-full-v2.png"
               alt="DRES NIRMAN Pvt. Ltd."
-              width={1294}
-              height={885}
+              width={1005}
+              height={487}
               className="h-auto w-[260px] max-w-full"
             />
             <p className="mt-7 max-w-sm text-sm leading-relaxed text-muted">
-              A multidisciplinary engineering and industrial solutions company —
+              A multidisciplinary engineering and industrial solutions company,
               combining construction experience, engineering expertise, modern
               technology and practical execution.
             </p>

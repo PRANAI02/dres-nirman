@@ -16,7 +16,7 @@ export default function ApproachPage() {
       <PageHero
         label="our approach"
         title="Understand → Engineer → Plan → Execute → Deliver"
-        lede="A single sequence that carries a project from the first site walk to handover — with the same team accountable at every step."
+        lede="A single sequence that carries a project from the first site walk to handover, with the same team accountable at every step."
         image="/images/excavator.jpg"
         alt="Construction works under way on an industrial site"
       />

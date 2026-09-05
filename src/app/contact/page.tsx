@@ -69,7 +69,7 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <p className="mt-6 font-mono text-[0.6rem] leading-relaxed tracking-[0.12em] text-muted-2">
-                  * Email address and LinkedIn URL are placeholders — confirm before launch.
+                  * Email address and LinkedIn URL are placeholders. Confirm before launch.
                 </p>
               </div>
             </Reveal>

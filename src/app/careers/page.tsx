@@ -60,7 +60,7 @@ export default function CareersPage() {
             <div className="mt-12 border-t border-[var(--line)]">
               {[
                 ["Learning", "Work across disciplines rather than inside a single silo."],
-                ["Responsibility", "Ownership of real scope, early — on drawings and on site."],
+                ["Responsibility", "Ownership of real scope, early: on drawings and on site."],
                 ["Exposure", "Design, execution, surveying and client coordination in one place."],
                 ["Growth", "A firm being built for the long term, with room to grow into it."],
               ].map(([t, d], i) => (

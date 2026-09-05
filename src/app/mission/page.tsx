@@ -23,7 +23,7 @@ const statements = [
     label: "our mission",
     title:
       "To deliver engineering solutions that are technically sound, practical to execute and built for lasting performance.",
-    body: "By combining experience, innovation, technology and continuous learning, we aim to create work that reflects our commitment to strength, precision and sustainability — and that is responsible towards the future.",
+    body: "By combining experience, innovation, technology and continuous learning, we aim to create work that reflects our commitment to strength, precision and sustainability, and that is responsible towards the future.",
   },
 ];
 

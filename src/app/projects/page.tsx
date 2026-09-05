@@ -39,7 +39,7 @@ export default function ProjectsPage() {
       <PageHero
         label="Our Projects"
         title="Yet to come."
-        lede="Our project index is being prepared. In the meantime, here are the sectors we are built to deliver in — and the disciplines we bring to each of them."
+        lede="Our project index is being prepared. In the meantime, here are the sectors we are built to deliver in, and the disciplines we bring to each of them."
         image="/images/warehouse-modern.jpg"
         alt="Steel structure erection at an industrial site"
       />
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
                   <p className="mt-3 max-w-md text-[0.88rem] leading-relaxed text-muted">
                     {s.body}
                   </p>
-                  <p className="label mt-6 text-muted-2">Projects — coming soon</p>
+                  <p className="label mt-6 text-muted-2">Projects: coming soon</p>
                 </div>
               </div>
             </Reveal>

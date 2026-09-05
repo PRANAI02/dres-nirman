@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/page-hero";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
@@ -11,6 +12,21 @@ export const metadata: Metadata = {
     "The people behind DRES NIRMAN — leadership shaped by a construction legacy dating back to 1991 and modern engineering education.",
 };
 
+function Portrait({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative aspect-[4/5] w-full overflow-hidden border border-[var(--line)]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 1024px) 100vw, 34vw"
+        className="object-cover [filter:grayscale(0.2)_contrast(1.02)]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,12,0.55)] via-transparent to-transparent" />
+    </div>
+  );
+}
+
 function Monogram({ initials }: { initials: string }) {
   return (
     <div className="relative grid aspect-[4/5] w-full place-items-center overflow-hidden border border-[var(--line)] bg-[linear-gradient(160deg,var(--panel-2),var(--ink))]">
@@ -19,7 +35,7 @@ function Monogram({ initials }: { initials: string }) {
       <span className="display relative text-[clamp(3.5rem,8vw,6rem)] text-white/90">
         {initials}
       </span>
-      <span className="label absolute bottom-6 text-muted-2">Portrait — placeholder</span>
+      <span className="label absolute bottom-6 text-muted-2">Portrait placeholder</span>
     </div>
   );
 }
@@ -60,7 +76,7 @@ export default function PeoplePage() {
               "He holds a Bachelor's degree in Civil Engineering from Manipal Institute of Technology, Manipal, and a Master's degree in Sustainable Civil and Structural Engineering from the University of Liverpool, a Russell Group university in the United Kingdom. His academic background has given him a strong foundation in structural engineering, sustainable construction and modern engineering practices.",
               "His professional experience includes exposure to leading construction, engineering and consultancy organisations, including Larsen & Toubro (L&T), Vijay Nirman Company Pvt. Ltd., K. Sanjeeva Reddy Civil Engineers and Contractors, and RREN Consultants and Contractors Pvt. Ltd. These experiences have provided exposure to different aspects of engineering, construction, site execution and professional practice.",
               "His approach is driven by a strong interest in continuous learning, technology and real-world implementation. He particularly values collaboration, meaningful industry interactions and practical execution, with a belief that engineering is most effective when technical knowledge is translated into solutions that work in the real world.",
-              "Through DRES NIRMAN, he brings together a legacy of civil construction and execution, modern engineering education and industry experience — with a vision of developing a multidisciplinary engineering firm that continuously learns, embraces new technologies and delivers solutions defined by strength, innovation and sustainability.",
+              "Through DRES NIRMAN, he brings together a legacy of civil construction and execution, modern engineering education and industry experience, with a vision of developing a multidisciplinary engineering firm that continuously learns, embraces new technologies and delivers solutions defined by strength, innovation and sustainability.",
             ].map((p, i) => (
               <Reveal key={i} delay={i * 60}>
                 <p className="lede">{p}</p>
@@ -87,7 +103,7 @@ export default function PeoplePage() {
               {[
                 "K. Sanjeeva Reddy is a Civil Engineer, entrepreneur and Director of DRES NIRMAN Pvt. Ltd., with a professional journey spanning more than three decades. Holding a Diploma in Civil Engineering, he began his professional journey in 1990 and established K. Sanjeeva Reddy Civil Engineers & Contractors in 1991.",
                 "Since then, he has built extensive practical experience in civil construction and project execution, working across projects associated with leading organisations including Bharat Petroleum Corporation Limited (BPCL), Hindustan Petroleum Corporation Limited (HPCL) and GAIL.",
-                "His entrepreneurial journey extends beyond civil construction — into granite quarrying and the natural stone industry, mining and material-related businesses and real estate. He is also a Partner at Yashodha Builders & Developers, and a Director of Sri Neelakanteshwara Swamy Creations LLP.",
+                "His entrepreneurial journey extends beyond civil construction, into granite quarrying and the natural stone industry, mining and material-related businesses and real estate. He is also a Partner at Yashodha Builders & Developers, and a Director of Sri Neelakanteshwara Swamy Creations LLP.",
                 "Known for his practical approach, strong work ethic, commercial understanding and hands-on knowledge, he believes in learning through experience, understanding the ground realities of a project and finding practical ways to move things forward. As a Director of DRES NIRMAN, he contributes decades of practical construction knowledge, industry perspective and entrepreneurial insight to the organisation.",
               ].map((p, i) => (
                 <Reveal key={i} delay={i * 60}>
@@ -98,7 +114,10 @@ export default function PeoplePage() {
 
             <Reveal delay={90} className="order-1 lg:order-2">
               <div className="lg:sticky lg:top-28">
-                <Monogram initials="SR" />
+                <Portrait
+                  src="/images/sanjeeva-reddy.jpg"
+                  alt="K. Sanjeeva Reddy, Director of DRES NIRMAN Pvt. Ltd."
+                />
                 <div className="mt-6">
                   <p className="display text-xl text-white">K. Sanjeeva Reddy</p>
                   <p className="label mt-3 text-accent-bright">Director</p>
