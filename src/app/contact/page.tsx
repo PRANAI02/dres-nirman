@@ -60,17 +60,16 @@ export default function ContactPage() {
                     <span className="label text-muted-2">Phone</span>
                     {contact.phone}
                   </a>
-                  <a
-                    href={contact.linkedin}
-                    className="flex items-center justify-between gap-4 text-steel transition-colors hover:text-accent-bright"
-                  >
-                    <span className="label text-muted-2">LinkedIn</span>
-                    Company page ↗
-                  </a>
+                  {contact.linkedin !== "#" && (
+                    <a
+                      href={contact.linkedin}
+                      className="flex items-center justify-between gap-4 text-steel transition-colors hover:text-accent-bright"
+                    >
+                      <span className="label text-muted-2">LinkedIn</span>
+                      Company page ↗
+                    </a>
+                  )}
                 </div>
-                <p className="mt-6 font-mono text-[0.6rem] leading-relaxed tracking-[0.12em] text-muted-2">
-                  * Email address and LinkedIn URL are placeholders. Confirm before launch.
-                </p>
               </div>
             </Reveal>
 

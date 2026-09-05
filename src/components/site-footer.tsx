@@ -81,14 +81,16 @@ export default function SiteFooter() {
                   {contact.phone}
                 </a>
               </li>
-              <li>
-                <a
-                  href={contact.linkedin}
-                  className="label text-muted transition-colors hover:text-accent-bright"
-                >
-                  LinkedIn ↗
-                </a>
-              </li>
+              {contact.linkedin !== "#" && (
+                <li>
+                  <a
+                    href={contact.linkedin}
+                    className="label text-muted transition-colors hover:text-accent-bright"
+                  >
+                    LinkedIn ↗
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
