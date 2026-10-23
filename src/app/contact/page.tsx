@@ -42,9 +42,16 @@ export default function ContactPage() {
           <div className="space-y-8">
             <Reveal delay={100}>
               <div className="panel p-8">
-                <p className="label text-muted-2">Office</p>
+                <p className="label text-muted-2">Offices</p>
                 <p className="display mt-6 text-lg text-white">{contact.company}</p>
-                <p className="mt-4 text-sm leading-relaxed text-muted">{contact.address}</p>
+                <div className="mt-4 space-y-4">
+                  {contact.addresses.map((a) => (
+                    <div key={a.label}>
+                      <p className="label text-muted-2">{a.label}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">{a.lines}</p>
+                    </div>
+                  ))}
+                </div>
                 <div className="mt-8 space-y-4 border-t border-[var(--line)] pt-6 text-sm">
                   <a
                     href={`mailto:${contact.email}`}

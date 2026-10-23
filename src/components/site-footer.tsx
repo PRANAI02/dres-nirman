@@ -64,7 +64,11 @@ export default function SiteFooter() {
               <li className="font-mono text-[0.7rem] tracking-[0.14em] text-white">
                 {contact.company}
               </li>
-              <li className="max-w-xs leading-relaxed text-muted">{contact.address}</li>
+              {contact.addresses.map((a) => (
+                <li key={a.label} className="max-w-xs leading-relaxed text-muted">
+                  {a.label}: {a.lines}
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${contact.email}`}

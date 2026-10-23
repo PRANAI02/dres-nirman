@@ -264,8 +264,18 @@ export const team = [
 
 export const contact = {
   company: "DRES NIRMAN PVT. LTD.",
-  address:
-    "Registered Office: Flat No. 101, Vijayalakshmi Fortune, Venkata Ramana Colony, Kurnool, Andhra Pradesh",
+  addresses: [
+    {
+      label: "Registered Office",
+      lines:
+        "Flat No. 101, Vijayalakshmi Fortune, Venkata Ramana Colony, Kurnool, Andhra Pradesh",
+    },
+    {
+      label: "Bengaluru Office",
+      lines:
+        "Flat 2078, Wing 2B, 7th Floor, Sobha Dream Gardens Apartment, Kannuru Rd, Bellahalli, Bengaluru, Karnataka 560064",
+    },
+  ],
   email: "info@dresnirman.com",
   phone: "+91 99088 68456",
   phoneHref: "+919908868456",
